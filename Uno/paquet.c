@@ -14,11 +14,18 @@ void creer_paquet() {
 					struct carte c;
 					char type[3];
 					snprintf(type, sizeof(type), "%d", i); // convertir i en chaine
-					creer_carte(&c, couleur, type); // remplir la carte
+					creer_carte(&c, couleur, type); //remplir la carte
 					paquet[nb_carte_creee++] = c;   // ajouter au paquet
 				}
 			}
-			/*Ajouter un 0*/
+			/*Ajouter un 0 de chaque couleur*/
+			
+			struct carte c;
+			char type[3];
+			snprintf(type, sizeof(type), "%d", 0); // valeur 0
+			creer_carte(&c, couleur, type); //remplir la carte
+			paquet[nb_carte_creee++] = c;   // ajouter au paquet
+			
 		}
 	}
 }
