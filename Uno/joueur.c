@@ -1,6 +1,9 @@
 #include "joueur.h"
+
+#include <stdio.h>
+
 void ajouter_carte(struct joueur* j, struct carte c) {
-    if (j->nb_cartes < 108) {
+    if (j->nb_cartes < 108  ) {
         j->main[j->nb_cartes++] = c;
     }
     else {
