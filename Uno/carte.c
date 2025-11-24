@@ -2,8 +2,9 @@
 #include <string.h>
 
 /* attention les types doivent faire que 2 char*/
-enum couleurs couleurs[NB_COULEURS] = { ROUGE, JAUNE, BLEU, VERT };
-const char* types[] = { "RV", "JJ", "PS" };
+enum couleurs couleurs[NB_COULEURS] = { ROUGE, JAUNE, BLEU, VERT, NOIR };
+const char* types_couleurs[NB_TYPE_COULEURS] = { "RV", "PS", "+2" };
+const char* types_noires[NB_TYPE_NOIRES] = { "JJ", "+4" };
 
 
 
