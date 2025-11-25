@@ -37,4 +37,7 @@ void reconstituer_pioche();
 // nb de cartes  dans la pioche
 int cartes_restantes();
 
+void ajouter_au_talon(struct carte c);
+
+
 #endif // PAQUET_H

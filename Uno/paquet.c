@@ -112,3 +112,13 @@ void reconstituer_pioche() {
     }
 }
 
+
+void ajouter_au_talon(struct carte c) {
+    if (index_talon < NB_CARTES) {
+        talon[index_talon++] = c;
+    }
+    else {
+        printf("tableau talon dépassé   \n");
+    }
+}
+

@@ -20,16 +20,17 @@ void afficher_main(const struct joueur* j) {
 }
 
 struct carte jouer_carte(struct joueur* j, int index) {
-    struct carte c = { 0 };
+    struct carte c = { 0 }; //carte vide
     if (index < 0 || index >= j->nb_cartes) {
         printf("Index invalide pour la carte à jouer\n");
-        return c; // Carte vide
     }
-    c = j->main[index];
-    // Décale les cartes après index
-    for (int i = index; i < j->nb_cartes - 1; i++) {
-        j->main[i] = j->main[i + 1];
+    else {
+        c = j->main[index];
+        // Décale les cartes après index
+        for (int i = index; i < j->nb_cartes - 1; i++) {
+            j->main[i] = j->main[i + 1];
+        }
+        j->nb_cartes--;
     }
-    j->nb_cartes--;
     return c;
 }

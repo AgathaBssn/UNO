@@ -1,4 +1,7 @@
 #include "bot.h"
+#include "carte.h"
+#include "joueur.h"
+#include "paquet.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -11,12 +14,12 @@ static int carte_jouable(const struct carte* c, const struct carte* carte_visibl
         || (c->couleur == NOIR); //noir toujours
 }
 
-// Le bot joue la première carte qu’il peut jouer
+// Le bot joue la 1ere carte qu il peut jouer
 struct carte jouer_coup_bot(struct joueur* bot, struct carte carte_visible) {
     for (int i = 0; i < bot->nb_cartes; i++) {
         if (carte_jouable(&bot->main[i], &carte_visible)) {
             struct carte carte_a_jouer = bot->main[i];
-            // Retirer la carte de la main du bot (décaler)
+            // decaler la main du bot
             for (int j = i; j < bot->nb_cartes - 1; j++) {
                 bot->main[j] = bot->main[j + 1];
             }
