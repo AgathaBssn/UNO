@@ -11,7 +11,7 @@ int index_piocher = 0;
 
 void creer_paquet() {
     int nb_carte_creee = 0;
-    for (int idx = 0; idx < NB_COULEURS; idx++) {
+    for (int idx = 0; idx < NB_COULEURS-1; idx++) {
         enum couleurs couleur = couleurs[idx];
         //  1 à 9 en deux fois
         for (int j = 0; j < 2; j++) {
