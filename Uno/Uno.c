@@ -104,8 +104,37 @@ void boucle_jeu() {
         }
         else {
             afficher_main(j);
-            // TODO: Ajouter gestion saisie utilisateur pour jouer une carte ou piocher
-            printf("Fonction saisie utilisateur non encore implémentée.\n");
+            int choix;
+            printf("Indice de la carte à jouer (-1 pour piocher): ");
+            scanf("%d", &choix);
+
+            if (choix == -1) {
+                // pioche
+                struct carte piochee = piocher();
+                ajouter_carte(j, piochee);
+                printf("Vous avez pioché : ");
+                afficher_carte(&piochee);
+            }
+            else {
+                struct carte c; // ajoutez cette déclaration au début de while si possible
+
+                if (choix < 0 || choix >= j->nb_cartes) {
+                    printf("Indice invalide, veuillez réessayer.\n");
+                    continue;
+                }
+
+                c = j->main[choix];
+                if (!carte_jouable(&c, &carte_visible)) {
+                    printf("Cette carte n'est pas jouable sur la carte visible, réessayez.\n");
+                    continue;
+                }
+
+                // Carte valide, la jouer et la retirer de la main
+                c = jouer_carte(j, choix);
+                ajouter_au_talon(c);
+                appliquer_effet_carte(c, &joueur_courant, NB_JOUEURS, &sens_jeu);
+            }
+
         }
 
         if (j->nb_cartes == 0) {
@@ -114,7 +143,7 @@ void boucle_jeu() {
         }
 
         if (!j->est_bot) {
-            // Passer au joueur suivant si humain n'a pas sauté/penalisé lui-même
+            // Passer au joueur suivant
             joueur_courant = (joueur_courant + sens_jeu + NB_JOUEURS) % NB_JOUEURS;
         }
     }

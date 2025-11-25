@@ -6,9 +6,10 @@
 #include "paquet.h"
 #include "carte.h"
 
-// Fonction du bot pour jouer son tour
-// Elle retourne la carte jouée (ou une carte vide si le bot pioche)
-// paramètres : le joueur bot, la carte face visible sur le talon
+// bot plays
+//  retourne la carte jouée ou une carte vide si le bot pioche
 struct carte jouer_coup_bot(struct joueur* bot, struct carte carte_visible);
+
+int carte_jouable(const struct carte* c, const struct carte* carte_visible);
 
 #endif // BOT_H

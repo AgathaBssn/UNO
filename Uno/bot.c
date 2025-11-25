@@ -6,7 +6,7 @@
 #include <string.h>
 
 //  vérifie si une carte est jouable sur une carte donnée
-static int carte_jouable(const struct carte* c, const struct carte* carte_visible) {
+ int carte_jouable(const struct carte* c, const struct carte* carte_visible) {
     // Au UNO, carte jouable si même couleur ou même type
     return (
         c->couleur == carte_visible->couleur) //mm couleur
