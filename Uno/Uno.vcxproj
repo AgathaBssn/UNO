@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2633bbc9-5190-433b-bec4-69a8c5963812}</ProjectGuid>
-    <RootNamespace>Uno3</RootNamespace>
+    <ProjectGuid>{6e521a86-2736-4901-ace0-f8c5a4bbf298}</ProjectGuid>
+    <RootNamespace>Uno</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,7 +123,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Uno3.cpp" />
+    <ClCompile Include="carte.c" />
+    <ClCompile Include="paquet.c" />
+    <ClCompile Include="Uno.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="carte.h" />
+    <ClInclude Include="paquet.h" />
+    <ClInclude Include="Uno.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
